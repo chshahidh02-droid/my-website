@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bright Eaglets College</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base */
+   
+        /* Header */
+        header {
+            background: url('https://images.unsplash.com/photo-1581091870621-58b3f270c8f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 60px;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.45); /* Dark overlay for text visibility */
+        }
+        header h1, header p { position: relative; z-index: 2; color: white; }
+        header h1 { font-size: 3em; margin: 0; }
+        header p { font-size: 1.5em; margin-top: 15px; }
+
+        /* Sections */
+        section { padding: 60px 20px; max-width: 1200px; margin: auto; }
+        h2 { color: white; } /* Headings outside cards now white */
+
+        /* Achievements */
+        .achievements {
+            display: flex; justify-content: space-around; flex-wrap: wrap; margin-top: 40px;
+        }
+        .achievement {
+            background: white;
+            padding: 30px;
+            margin: 15px;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            flex: 1 1 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: black; /* Card text black */
+        }
+        .achievement:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+        .achievement h2 { font-size: 2.5em; margin-bottom: 10px; color: #1e90ff; }
+        .achievement i { font-size: 2.5em; color: #1e90ff; margin-bottom: 10px; }
+        .achievement p { font-size: 1.1em; }
+
+        /* Enrollment/Employment empty text white */
+        #enrollments:empty, #employment:empty { color: white; }
+
+        /* Features / Why Choose Us */
+        .features {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px; margin-top: 40px;
+        }
+        .feature {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            color: black; /* Card text black */
+        }
+        .feature:hover { transform: translateY(-8px); }
+        .feature i { font-size: 2.2em; color: #1e90ff; margin-bottom: 15px; }
+
+        /* Parallax CTA */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .parallax h2 { font-size: 3em; margin: 0; }
+        .parallax p { font-size: 1.2em; }
+
+        /* Footer */
+        footer { background: #1e90ff; color: white; text-align: center; padding: 30px; }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Bright Eaglets</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="admission.html">Admission</a></li>
+            <li><a href="student.html">Student</a></li>
+            <li><a href="teacher.html">Teacher</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <h1>Bright Eaglets College</h1>
+        <p>Shaping Future Leaders Through Quality Education</p>
+    </header>
+
+    <!-- Mission Section -->
+    <section>
+        <h2>Our Mission</h2>
+        <p>Bright Eaglets College is dedicated to providing high-quality education in Web Development, Graphic Designing, Virtual Assistance, and more. Our goal is to empower students with skills and knowledge that lead to successful careers and personal growth.</p>
+    </section>
+
+    <!-- Achievements Section -->
+    <section>
+        <h2>Our Achievements</h2>
+        <div class="achievements">
+            <div class="achievement">
+                <i class="fas fa-user-graduate"></i>
+                <h2 id="enrollments"></h2>
+                <p>Overall Enrollments</p>
+            </div>
+            <div class="achievement">
+                <i class="fas fa-briefcase"></i>
+                <h2 id="employment"></h2>
+                <p>Approx. Employment</p>
+            </div>
+            <div class="achievement">
+                <i class="fas fa-book-open"></i>
+                <h2>50+</h2>
+                <p>Courses Offered</p>
+            </div>
+            <div class="achievement">
+                <i class="fas fa-award"></i>
+                <h2>20+</h2>
+                <p>Years of Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Practical Learning</h3>
+                <p>Hands-on courses using industry-standard tools and methods.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chalkboard-teacher"></i>
+                <h3>Expert Faculty</h3>
+                <p>Experienced instructors guiding students towards career success.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-globe"></i>
+                <h3>Flexible Learning</h3>
+                <p>Online and on-campus courses tailored to your schedule.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-handshake"></i>
+                <h3>Placement Support</h3>
+                <p>Strong assistance to secure jobs for our graduates.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax CTA Section -->
+    <div class="parallax" style="background-image: url('https://www.brighteaglets.edu.pk/assets/images/cta.jpg');">
+        <h2>Join Thousands of Successful Students!</h2>
+        <p>Apply online today and take the first step towards your dream career.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2026 Bright Eaglets College • All Rights Reserved
+    </footer>
+
+</body>
+</html>

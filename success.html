@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admission Slip</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- PDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<style>
+body{
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  margin:0;
+}
+
+/* RECEIPT STYLE */
+.card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  width:380px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,0.3);
+  animation:fadeIn 0.8s ease;
+}
+
+.logo{
+  width:80px;
+  margin-bottom:10px;
+}
+
+h2{
+  margin:5px 0;
+  color:#0d1b4c;
+}
+
+.line{
+  border-top:2px dashed #ccc;
+  margin:15px 0;
+}
+
+p{
+  margin:8px 0;
+  color:#333;
+  font-size:15px;
+}
+
+span{
+  font-weight:bold;
+  color:#0072ff;
+}
+
+.status{
+  margin-top:10px;
+  color:green;
+  font-weight:bold;
+}
+
+/* BUTTONS */
+.btn{
+  margin-top:10px;
+  padding:10px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  color:white;
+}
+
+.print-btn{
+  background:#28a745;
+}
+
+.pdf-btn{
+  background:#ff5733;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* PRINT ONLY SLIP */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #slip, #slip * {
+    visibility: visible;
+  }
+  #slip {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px;
+  }
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(0.8);}
+  to{opacity:1; transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="slip">
+
+  <!-- LOGO -->
+  <img src="c:\Users\Media\OneDrive\Desktop\logo.jfif" class="logo">  <!-- ⚠️ apni image ka naam yahan dalna -->
+
+  <h2>Bright Eaglets</h2>
+  <p>Admission Slip</p>
+
+  <div class="line"></div>
+<img id="student-img" style="width: 80px; height: 80px; border-radius: 50%;
+object-fit: cover;margin-bottom: 10px;">
+  <p>Name: <span id="name"></span></p>
+  <p>Student ID: <span id="id"></span></p>
+  <p>Course: <span id="course"></span></p>
+  <p>Phone: <span id="phone"></span></p>
+
+  <div class="line"></div>
+
+  <p class="status">✅ Your Form is Successfully Submitted</p>
+
+  <!-- BUTTONS -->
+  <button class="btn print-btn" onclick="printSlip()">🖨 Print</button>
+  
+
+</div>
+
+<script>
+// DATA LOAD
+document.getElementById("student-img").src= localStorage.getItem("studentPhoto");
+document.getElementById("name").innerText = localStorage.getItem("studentName");
+document.getElementById("id").innerText = localStorage.getItem("studentID");
+document.getElementById("course").innerText = localStorage.getItem("studentCourse");
+document.getElementById("phone").innerText = localStorage.getItem("studentPhone");
+
+// PRINT
+function printSlip() {
+  window.print();
+}
+
+function downloadPDF() {
+  const element = document.getElementById("slip");
+
+  const opt = {
+    margin: 0,
+    filename: 'Admission_Slip.pdf',
+    image: { type: 'jpeg', quality: 1 },
+    html2canvas: { 
+      scale: 3,          // 🔥 HIGH QUALITY
+      useCORS: true
+    },
+    jsPDF: { 
+      unit: 'mm', 
+      format: 'a4', 
+      orientation: 'portrait' 
+    }
+  };
+
+  html2pdf().set(opt).from(element).save();
+}
+</script>
+</script>
+
+</body>
+</html>

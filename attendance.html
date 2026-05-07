@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">   
+<title>Attendance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="section">
+<h2>Attendance System</h2>
+
+<div class="grid">
+
+<!-- MONTH CARD -->
+<div class="card" onclick="toggleMonth('jan')">January</div>
+<div id="jan" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('feb')">February</div>
+<div id="feb" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('mar')">March</div>
+<div id="mar" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('apr')">April</div>
+<div id="apr" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('may')">May</div>
+<div id="may" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('jun')">June</div>
+<div id="jun" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('jul')">July</div>
+<div id="jul" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('aug')">August</div>
+<div id="aug" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('sep')">September</div>
+<div id="sep" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('oct')">October</div>
+<div id="oct" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('nov')">November</div>
+<div id="nov" class="month-box"></div>
+
+<div class="card" onclick="toggleMonth('dec')">December</div>
+<div id="dec" class="month-box"></div>
+
+</div>
+</section>
+
+<script>
+function toggleMonth(id) {
+  let box = document.getElementById(id);
+
+  if (box.innerHTML === "") {
+    let content = "<table><tr><th>Date</th><th>Status</th></tr>";
+
+    for (let i = 1; i <= 30; i++) {
+      content += `
+      <tr>
+        <td>${i}</td>
+        <td>
+          <button onclick="mark(this, 'Present')">P</button>
+          <button onclick="mark(this, 'Absent')">A</button>
+        </td>
+      </tr>`;
+    }
+
+    content += "</table>";
+    box.innerHTML = content;
+  } else {
+    box.innerHTML = "";
+  }
+}
+
+function mark(btn, status) {
+  btn.parentElement.innerHTML = status;
+}
+</script>
+
+</body>
+</html>

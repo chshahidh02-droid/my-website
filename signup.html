@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Sign Up</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* CARD */
+.card {
+  width:400px;
+  max-width:90%;
+  padding:40px;
+  border-radius:15px;
+  text-align:center;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  margin-top:100px;
+}
+
+input, select {
+  width:100%;
+  padding:12px;
+  margin:12px 0;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+}
+
+button {
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  background:#00f7ff;
+  color:#1e3c72;
+  border:none;
+  border-radius:8px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#00d6e6;
+}
+
+/* RESPONSIVE */
+@media (max-width:480px){
+  .card{ padding:20px; width:95%; }
+  .logo{ font-size:24px; }
+  .nav-links{ gap:15px; font-size:14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Bright Eaglets</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="teacher.html">Teacher</a></li>
+    <li><a href="contact.html">Contact</a></li>
+     <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<!-- SIGNUP FORM -->
+<div class="card">
+  <h3>Student Sign Up</h3>
+  <input type="text" id="signupName" placeholder="Full Name">
+  <input type="text" id="signupId" placeholder="Student ID">
+  <input type="email" id="signupEmail" placeholder="Email">
+  <input type="password" id="signupPassword" placeholder="Password">
+  <select id="signupCourse">
+    <option value="">Select Course</option>
+    <option>Web Development</option>
+    <option>Graphic Designing</option>
+    <option>Digital Marketing</option>
+  </select>
+  <button onclick="signup()">Sign Up</button>
+  <p>Already have an account? <a href="student.html">Login</a></p>
+</div>
+
+<script>
+function signup(){
+  const student = {
+    name: document.getElementById('signupName').value,
+    studentId: document.getElementById('signupId').value,
+    email: document.getElementById('signupEmail').value,
+    password: document.getElementById('signupPassword').value,
+    course: document.getElementById('signupCourse').value
+  };
+  localStorage.setItem('student', JSON.stringify(student));
+  alert("Signup Successful!");
+  window.location.href = "student.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Courses</title>
+
+<style>
+
+
+
+h2 {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  padding: 40px 60px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  color: black;
+  height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  transform: scale(0.8);
+  transition: 0.3s ease;
+  color: black;
+}
+
+.modal.show .modal-content {
+  transform: scale(1);
+}
+
+.modal img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.apply-btn {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #00c6ff, #92fe9d);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+</style>
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Bright Eaglets</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="teacher.html">Teacher</a></li>
+    <li><a href="contact.html">Contact</a></li>
+     <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+<h2>Our Courses</h2>
+
+<div class="grid">
+
+<!-- SAMPLE COURSES (baqi copy paste krna) -->
+
+<div class="card" onclick="showDetails(this)" data-title="Spoken English" data-duration="3 Months" data-fee="27500">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f">
+<p>Spoken English</p>
+</div>
+
+<div class="card" onclick="showDetails(this)" data-title="Amazon Business" data-duration="6 Months" data-fee="50000">
+<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3">
+<p>Amazon Business</p>
+</div>
+
+<div class="card" onclick="showDetails(this)" data-title="Web Development" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+<p>Web Development</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Graphic Designing" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0">
+<p>Graphic Designing</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Digital Marketing" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1557838923-2985c318be48">
+<p>Digital Marketing</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="SEO Course" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<p>SEO Course</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Freelancing" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+<p>Freelancing</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Shopify" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1515165562835-c4c1b1fcd0b9">
+<p>Shopify</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Video Editing" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+<p>Video Editing</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="UI/UX Design" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1559028012-481c04fa702d">
+<p>UI/UX Design</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Wordpress" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231">
+<p>Wordpress</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Content Writing" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1455390582262-044cdead277a">
+<p>Content Writing</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Social Media Marketing" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d">
+<p>Social Media Marketing</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="E-Commerce" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df">
+<p>E-Commerce</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="AI Tools Course" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1677442136019-21780ecad995">
+<p>AI Tools Course</p>
+</div>
+<div class="card" onclick="showDetails(this)" data-title="Data Entry" data-duration="3 Months" data-fee="30000">
+<img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c">
+<p>Data Entry</p>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">❌</span>
+    <img id="modal-img">
+    <h3 id="course-title"></h3>
+    <p id="course-duration"></p>
+    <p id="course-fee"></p>
+
+    <a href="admission.html">
+      <button class="apply-btn">Apply Now</button>
+    </a>
+  </div>
+</div>
+<script>
+
+function showDetails(card) {
+
+  let title = card.getAttribute("data-title");
+  let duration = card.getAttribute("data-duration");
+  let fee = card.getAttribute("data-fee");
+  let img = card.querySelector("img").src;
+
+  document.getElementById("course-title").innerText = title;
+  document.getElementById("course-duration").innerText = "Duration: " + duration;
+  document.getElementById("course-fee").innerText = "Fee: Rs. " + fee;
+  document.getElementById("modal-img").src = img;
+
+  document.getElementById("modal").classList.add("show");
+}
+
+function closeModal() {
+  document.getElementById("modal").classList.remove("show");
+}
+
+</script>
+</body>
+</html>

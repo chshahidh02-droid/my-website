@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Contact</title>
+<link rel="stylesheet" href="style.css">
+<style>
+h2 {
+  font-size: 40px;
+  color: white;
+}
+
+/* FORM BOX */
+.form-box {
+  width: 60%;
+  max-width: 500px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.1); /* glass effect */
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* INPUTS */
+.form-box input,
+.form-box textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: white;
+  font-size: 14px;
+}
+
+/* PLACEHOLDER COLOR */
+.form-box input::placeholder,
+.form-box textarea::placeholder {
+  color: #888;
+}
+
+/* BUTTON */
+.form-box button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, #00c6ff, #92fe9d);
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-box button:hover {
+  transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="logo">Bright Eaglets</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="teacher.html">Teacher</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+</nav>
+
+<section class="section">
+<h2>Contact Us</h2><br><br><br>
+
+<form class="form-box">
+  <input type="text"  placeholder="Name" required>
+  <input type="email" placeholder="Email" required>
+  <textarea placeholder="Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+</section>
+
+</body>
+</html>
